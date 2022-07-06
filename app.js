@@ -7,10 +7,7 @@ import passport from "passport";
 import routes from './routes/routes.js';
 import addEnrty from "./dbEntries.js"; 
 
-
-
-const port = process.env.PORT;
-const url = process.env.DB_URL;
+const url = "mongodb+srv://ccapdev-16:ccapdev16@cluster0.hut9tv3.mongodb.net/?retryWrites=true&w=majority";
 const secret = process.env.SESSION_SECRET; 
 const app = express(); 
 
@@ -58,10 +55,6 @@ app.use(passport.session());
 
 app.use(`/`, routes);
 
-app.listen(port, function () {
-    console.log(`>>>   SERVER IS RUNNING AT:`);
-    console.log(`>>>   http://localhost:` + port);
-});
-
-
-
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
