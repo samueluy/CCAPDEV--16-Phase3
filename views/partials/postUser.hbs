@@ -1,0 +1,44 @@
+{{!-- DONE sans profile link --}}
+
+<div class="post">
+    <img src={{profilePic}} class="link pfp" id="profilepic" 
+        {{!-- nameindb={{{name}}} --}}
+        usernameindb={{{username}}}
+        
+    />
+    <!-- profile pic (links to profile page) [link]-->
+    <div class="name">{{{name}}}</div>
+    <div class="handle" id="username"> @{{{username}}}</div>
+    <div class="Date Posted" id="date"> &nbsp; &nbsp; | &nbsp;&nbsp;   {{{date}}}</div>
+    <div class="postContents" id="content">
+       {{{content}}}
+    </div >
+    {{#if this.img}}
+    <div class="image" id="imageUpload" profilepicindb={{{profilePic}}}>
+        <img id="img"src={{this.img}}>
+    </div>
+    {{/if}}
+    <div class="schoolNamePost">{{{school}}}</div>
+    <div class="spaceBeforeEdit"></div>
+    <a>
+        <input
+            type="image"
+            name="editBtn"
+            src="images/edit.png"
+            class="link editIcon"
+            id="edit"
+            idInDB={{{_id}}}
+        />
+    </a>
+    <div class="spaceBeforeDelete"></div>
+    <a>
+        <input
+        type="image"
+        name="deleteBtn"
+        src="images/delete.png"
+        class="link deleteIcon"
+        id="delete"
+        idInDB={{{_id}}}
+        />
+    </a>
+</div>

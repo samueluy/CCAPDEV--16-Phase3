@@ -1,0 +1,45 @@
+
+<body class="login">
+    <div class="block">
+        <div class="logo"><img src="images/LOGO1.png" id="logo"></div>
+        <div class="loginContainer">
+            <h1>Create Account</h1>
+            <form action="/register" method="POST" class="loginForm">
+                <div class="inputField">            
+                    <input type="text" id="nameReg" name="name" required>
+                    <span></span>
+                    <label>Name</label>
+                </div>
+                <div class="inputField">            
+                    <input type="text" id="usernameReg" name="username" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
+                <div class="inputField">            
+                    <input type="email" id="emailReg" name="email" required>
+                    <span></span>
+                    <label>Email Address</label>
+                </div>
+                <div class="inputField">    
+                    <p id="schoolLabel"> School </p>
+                    <select id="schoolReg" name="school" required> 
+                        <option value="DE LA SALLE UNIVERSITY, MANILA" id="schoolDropDownOptions"> DE LA SALLE UNIVERSITY, MANILA </option>
+                        <option value="ATENEO DE MANILA UNIVERSITY" id="schoolDropDownOptions"> ATENEO DE MANILA UNIVERSITY </option>
+                        <option value="UNIVERSITY OF SANTO THOMAS" id="schoolDropDownOptions"> UNIVERSITY OF SANTO THOMAS </option>
+                        <option value="UNIVERSITY OF THE PHILIPPINES, DILIMAN" id="schoolDropDownOptions"> UNIVERSITY OF THE PHILIPPINES, DILIMAN </option>
+                    </select>  
+                </div>
+                <div class="inputField">
+                    <input type="password" id="passwordReg" name="password" required>
+                    <span></span>
+                    <label>Password</label>                
+                </div>
+                <p id="error"></p>
+                <button id="register">Register</button>
+                <div class="registerField">Already have an account? <a href="/login" id="signUp">Login</a></div>
+                <p id="error"></p>
+            </form>
+        </div>
+    </div>
+</div>
+

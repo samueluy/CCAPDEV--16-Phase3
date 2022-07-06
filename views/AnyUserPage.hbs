@@ -1,0 +1,27 @@
+<div class="userPageInfo">
+    <div class="bioAny">
+        <p username={{{username}}} id="userBio"> {{{bio}}} </p>
+    </div>
+    <div class="schoolNameBox">
+        <p> {{{school}}} </p>
+    </div> 
+    <div class="userNameBox">
+        <p id="displayName"> {{{name}}} </p>
+        <p id="userName"> @{{{username}}}</p>
+    </div> 
+    
+    <div class="userPagePfp">
+        <img src={{profilePic}}>
+    </div>
+     
+</div>
+
+<div class="postsContainer">
+    {{#each list}} 
+        {{#if isLoggedIn }} 
+            {{> postUser name=name username=username content=content school=school}}
+        {{else}} 
+            {{> postOther name=name username=username content=content school=school}}
+        {{/if}}
+    {{/each}} 
+</div>

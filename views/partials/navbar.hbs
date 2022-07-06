@@ -1,0 +1,40 @@
+
+<header>
+        <div class="headerSearch">
+            <a> <img src="images/searchIcon.png" class="searchIcon" /> </a>
+            <form action="/search" method="GET" id="searchForm"> 
+                 <input type="text" placeholder="Search by keywords or @username" class="searchBar" name="keyword" />
+            </form>
+        </div>
+
+        <div class="headerNav">
+            <a href='/' class="navLink"> <p id="navToSchoolPage"> School Page &nbsp;&nbsp;&nbsp; </p> </a>
+            <p id="navDivider"> | &nbsp;&nbsp;&nbsp; </p>
+            <a href='/user' class="navLink"> <p id="navToUserPage"> Your Account &nbsp;&nbsp;&nbsp; </p> </a>
+        </div>
+
+        <img src={{this.profilePic}}  class="profilePic"/> 
+        <button id="logoutButton"><a href="/logout"> Logout </a></button> 
+
+        <button type="button" id="postCreateBtn"> + </button>
+
+</header>
+
+<div class="popup" id="popup-1">
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="close-button" id="exitBtn">&times;</div>
+        <div class="pfp"><img class="pfp" src={{profilePic}} ></div>
+        <div class="image-upload">
+            <form action="/addPost" method="post" enctype="multipart/form-data">
+            <label for="file-input">
+                <img class="image-button" src="images/insert.png">
+            </label>
+                <textarea class="textarea" placeholder="What's on your mind?" id="textareaContent" name="content"></textarea> 
+                <input id="file-input" type="file" accept="image/*" name="file-input"/>   
+                <button class="post-button">Post</button>
+            </form>  
+        </div>
+    </div>
+</div> 
+

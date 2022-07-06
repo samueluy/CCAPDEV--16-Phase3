@@ -1,0 +1,23 @@
+
+<div class="schoolInfo">
+    <div class="nameBox">
+        <p> {{{school}}} </p>
+    </div> 
+    {{#if dlsu}}
+        <div class="picBox"> <a> <img src="images/DLSU_logo.png" class="schoolLogo" /> </a> </div>
+    {{else if admu}}
+        <div class="picBox"> <a> <img src="images/ADMU_logo.png" class="schoolLogo" /> </a> </div>
+    {{else if ust}} 
+        <div class="picBox"> <a> <img src="images/UST_logo.png" class="schoolLogo" /> </a> </div>
+    {{else}}
+        <div class="picBox"> <a> <img src="images/UP_logo.png" class="schoolLogo" /> </a> </div>
+    {{/if}}
+</div>
+
+<div class="postsContainer">
+    {{#each list}} 
+        {{#if isLoggedIn }} 
+    {{> postUser name=name username=username content=content school=school profilePic=profilePic}}        {{else}} 
+    {{> postOther name=name username=username content=content school=school profilePic=profilePic}}        {{/if}}
+    {{/each}} 
+</div>

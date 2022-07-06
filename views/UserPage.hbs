@@ -1,0 +1,36 @@
+<div class="userPageInfo">
+    <div class="bio">
+        <p username={{{username}}} id="userBio"> {{{bio}}} </p>
+    </div>
+
+    <label for="file-input-pic">
+        <img id="editButtonProfPic" src="images/edit.png">
+    </label>
+    
+    <form action="/updatePic" method="post" enctype="multipart/form-data" id="picUpdate">
+            <input id="file-input-pic" type="file" accept="image/*" name="file-input-pic" required/>
+            <button username={{{username}}} class="update-button">Update</button>
+    </form>  
+
+    <div class="schoolNameBox">
+        <p> {{{school}}} </p>
+    </div> 
+    <div class="userNameBox">
+        <p id="displayName"> {{{name}}} </p>
+        <p id="userName"> @{{{username}}}</p>
+        
+    </div> 
+    <div class="userPagePfp">
+        <img src={{profilePic}}>
+    </div>
+ </div>
+
+<div class="postsContainer">
+    {{#each list}} 
+        {{#if isLoggedIn }} 
+            {{> postUser name=name username=username content=content school=school}}
+        {{else}} 
+            {{> postOther name=name username=username content=content school=school}}
+        {{/if}}
+    {{/each}} 
+</div>

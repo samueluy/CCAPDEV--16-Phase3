@@ -1,0 +1,20 @@
+
+<div class="searchContainer">
+    <div class="searchKeyword">
+        <span class="searchBarKey">
+            <img src="images/searchIcon.png" class="searchBtn" />
+            Search Results for "{{{keyword}}}" in {{{school}}}
+        </span>
+    </div>
+</div>
+
+
+<div class="postsContainer">
+    {{#each list}} 
+        {{#if isLoggedIn }} 
+            {{> postUser name=name username=username content=content school=school profilePic=profilePic}}
+        {{else}} 
+            {{> postOther name=name username=username content=content school=school profilePic=profilePic}}
+        {{/if}}
+    {{/each}} 
+</div>

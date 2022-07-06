@@ -1,0 +1,26 @@
+
+<body class="login">
+    <div class="block">
+        <div class="logo"><img src="images/LOGO1.png" id="logo"></div>
+        <div class="loginContainer">
+            <h1>User Login</h1>
+            <form action="/login" method="POST" class="loginForm">
+                <div class="inputField">            
+                    <input type="text" id="username" name="username" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
+                <div class="inputField">
+                    <input type="password" id="password" name="password" required>
+                    <span></span>
+                    <label>Password</label>                
+                </div>
+                {{#if error}}
+                    <p id="error"> Username or password is incorrect. </p>
+                {{/if}}
+                <button id="logIn">Login</button>
+                <div class="registerField">Haven't registered yet? <a href="/register" id="signUp">Register</a></div>
+            </form>
+        </div>
+    </div>
+</body>
